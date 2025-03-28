@@ -1,0 +1,14 @@
+plugins {
+    id 'groovy-gradle-plugin'
+}
+
+repositories {
+    gradlePluginPortal()
+}
+
+dependencies {
+    //implementation 'net.fabricmc:fabric-loom:1.10-SNAPSHOT'
+    implementation libs.gradle.versions
+    //implementation libs.fabric.loom
+    //implementation libs2.loom
+}

@@ -1,0 +1,10 @@
+[versions]
+fabric-loom = "1.10-SNAPSHOT"
+gradle-versions = "0.51.0"
+
+[libraries]
+fabric-loom = { module = "fabric-loom:fabric-loom.gradle.plugin", version.ref = "fabric-loom" }
+gradle-versions = { module = "com.github.ben-manes:gradle-versions-plugin", version.ref = "gradle-versions" }
+
+[plugins]
+fabric-loom2 = { id = "fabric-loom", version.ref = "fabric-loom" }
