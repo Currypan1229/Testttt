@@ -32,8 +32,8 @@ public class LittleMaidEntity extends PathAwareEntity implements ILittleMaidEnti
         LITTLE_MAID = EntityType.Builder
                 .create(LittleMaidEntity::new, SpawnGroup.CREATURE)
                 .dimensions(0.6F, 1.5F)
-                .maxTrackingRange(8)
                 .eyeHeight(1.25F)
+                .maxTrackingRange(8)
                 .spawnRestriction(SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, LittleMaidEntity::canSpawn)
                 .build(RegistryManager.LITTLE_MAID);
     }
