@@ -12,7 +12,6 @@ fabric-api-1215 = '0.119.5+1.21.5'
 
 # JMH Libraries
 jmh-lib = '0.9'
-slf4j = "2.0.17"
 
 # Common libraries
 lombok = "1.18.36"
@@ -35,7 +34,6 @@ fabric-api-1215 = { module = 'net.fabricmc.fabric-api:fabric-api', version.ref =
 jmh-core = { module = 'org.openjdk.jmh:jmh-core', version.ref = 'jmh-lib' }
 jmh-apt = { module = 'org.openjdk.jmh:jmh-generator-annprocess', version.ref = 'jmh-lib' }
 jmh-bytecode = { module = 'org.openjdk.jmh:jmh-generator-bytecode', version.ref = 'jmh-lib' }
-slf4j = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 
 # Common Libraries
 lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }

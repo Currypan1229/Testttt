@@ -7,6 +7,9 @@ repositories {
 }
 
 dependencies {
+    testImplementation libs.junit.jupiter
+    testRuntimeOnly libs.junit.platform
+
     testCompileOnly libs.lombok
     testAnnotationProcessor libs.lombok
 }
@@ -14,7 +17,7 @@ dependencies {
 testing {
     suites {
         test {
-            useJUnitJupiter('5.10.3')
+            useJUnitJupiter()
         }
     }
 }

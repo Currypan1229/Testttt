@@ -12,6 +12,7 @@ dependencies {
     jmh libs.jmh.apt
     jmh libs.jmh.bytecode
 
+    jmh libs.lombok
     jmh libs.slf4j
 }
 

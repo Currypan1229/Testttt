@@ -5,7 +5,6 @@ plugins {
     id 'fabric-loom'
 }
 
-
 processResources {
     inputs.property "version", project.version
     filteringCharset "UTF-8"

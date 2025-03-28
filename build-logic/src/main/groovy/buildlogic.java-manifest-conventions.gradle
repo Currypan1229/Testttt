@@ -1,0 +1,26 @@
+import java.time.ZoneOffset
+import java.time.ZonedDateTime
+
+plugins {
+    id 'java-library'
+}
+
+Properties props = new Properties()
+try (FileInputStream fis = new FileInputStream(new File(parent.rootDir.getPath(), "application.properties"))) {
+    props.load(fis)
+}
+
+String date = ZonedDateTime.now(ZoneOffset.UTC).getDateTimeString()
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': props.getProperty("name"),
+                'Created-By': String.valueOf(JavaVersion.current()) + " (" + props.getProperty("vendor") + ")",
+                'Signature-Version': props.getProperty("version"),
+                'Implementation-Date': date
+    }
+}
+
+tasks.withType(Jar).configureEach {
+    manifest = jar.manifest
+}

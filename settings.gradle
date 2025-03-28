@@ -14,9 +14,9 @@ pluginManagement {
 }
 
 
-rootProject.name = 'LittleMaid-Remaked'
-include('api', 'common')
+rootProject.name = 'LittleMaid-Remade'
+include(':common:api', ':common:impl')
 
 include(
-        'fabric:common'
+        ':fabric:common'
 )

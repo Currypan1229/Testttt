@@ -1,10 +1,14 @@
 plugins {
     id 'buildlogic.java-fabric-conventions'
+    id 'buildlogic.java-module-conventions'
 }
 
 loom {
+    enableModProvidedJavadoc.set(true)
     accessWidenerPath = file("src/main/resources/little_maid.accesswidener")
 }
+
+println parent.parent.allprojects.find { (it.path == ':common') }
 
 dependencies {
     minecraft libs.minecraft.'1215'
@@ -13,4 +17,7 @@ dependencies {
     })
     modImplementation libs.fabric.loader.'1215'
     modImplementation libs.fabric.api.'1215'
+
+    implementation project(':common:api')
+    implementation project(':common:impl')
 }
