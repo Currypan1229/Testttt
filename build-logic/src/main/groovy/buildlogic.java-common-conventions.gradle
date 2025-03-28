@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'com.github.ben-manes.versions'
 }
 
 repositories {
@@ -17,8 +18,39 @@ testing {
     }
 }
 
+
+def javaVersion = properties.getOrDefault("java_version", 8) as int
+def javaEncoding = 'UTF-8'
+tasks.withType(JavaCompile).configureEach {
+    configure(options) {
+        encoding = javaEncoding
+        compilerArgs << '-Xlint'
+        compilerArgs << '-Xmaxerrs' << '10000'
+        compilerArgs << '-Xmaxwarns' << '10000'
+        compilerArgs << '-Xdiags:verbose'
+    }
+
+    it.sourceCompatibility = it.targetCompatibility = javaVersion
+}
+
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion = JavaLanguageVersion.of(javaVersion)
+    }
+
+    withSourcesJar()
+    withJavadocJar()
+}
+
+tasks.withType(Javadoc).configureEach {
+    configure(options) {
+        encoding = docEncoding = charSet = javaEncoding
     }
 }
+
+
+tasks.withType(AbstractCopyTask).configureEach {
+    duplicatesStrategy = DuplicatesStrategy.WARN
+}
+
+tasks.jar.dependsOn(processResources)

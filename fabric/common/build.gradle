@@ -2,5 +2,15 @@ plugins {
     id 'buildlogic.java-fabric-conventions'
 }
 
+loom {
+    accessWidenerPath = file("src/main/resources/little_maid.accesswidener")
+}
+
 dependencies {
+    minecraft libs.minecraft.'1215'
+    mappings(variantOf(libs.fabric.yarn.'1215') {
+        classifier("v2")
+    })
+    modImplementation libs.fabric.loader.'1215'
+    modImplementation libs.fabric.api.'1215'
 }

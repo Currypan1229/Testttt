@@ -1,4 +1,16 @@
 plugins {
     id 'buildlogic.java-common-conventions'
     id 'java-library'
+
+    id 'fabric-loom'
+}
+
+
+processResources {
+    inputs.property "version", project.version
+    filteringCharset "UTF-8"
+
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
 }

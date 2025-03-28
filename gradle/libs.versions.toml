@@ -1,10 +1,42 @@
 [versions]
-fabric-loom = "1.10-SNAPSHOT"
-gradle-versions = "0.51.0"
+#Plugins
+fabric-loom = '1.10-SNAPSHOT'
+gradle-versions = '0.51.0'
+jmh-pl = "0.7.3"
+
+# Minecraft Libraries
+minecraft-1215 = '1.21.5'
+fabric-yarn-1215 = '1.21.5+build.1'
+fabric-loader-1215 = '0.16.10'
+fabric-api-1215 = '0.119.5+1.21.5'
+
+# JMH Libraries
+jmh-lib = '0.9'
+slf4j = "2.0.17"
+
+# Common libraries
+lombok = "1.18.36"
+jetbrains-annotation = "26.0.2"
+
 
 [libraries]
-fabric-loom = { module = "fabric-loom:fabric-loom.gradle.plugin", version.ref = "fabric-loom" }
-gradle-versions = { module = "com.github.ben-manes:gradle-versions-plugin", version.ref = "gradle-versions" }
+#Plugins
+fabric-loom = { module = 'fabric-loom:fabric-loom.gradle.plugin', version.ref = 'fabric-loom' }
+gradle-versions = { module = 'com.github.ben-manes:gradle-versions-plugin', version.ref = 'gradle-versions' }
+jmh-pl = { module = "me.champeau.jmh:me.champeau.jmh.gradle.plugin", version.ref = "jmh-pl" }
 
-[plugins]
-fabric-loom2 = { id = "fabric-loom", version.ref = "fabric-loom" }
+# Minecraft Libraries
+minecraft-1215 = { module = 'org.mojang:minecraft', version.ref = 'minecraft-1215' }
+fabric-yarn-1215 = { module = 'net.fabricmc:yarn', version.ref = 'fabric-yarn-1215' }
+fabric-loader-1215 = { module = 'net.fabricmc:fabric-loader', version.ref = 'fabric-loader-1215' }
+fabric-api-1215 = { module = 'net.fabricmc.fabric-api:fabric-api', version.ref = 'fabric-api-1215' }
+
+# JMH Libraries
+jmh-core = { module = 'org.openjdk.jmh:jmh-core', version.ref = 'jmh-lib' }
+jmh-apt = { module = 'org.openjdk.jmh:jmh-generator-annprocess', version.ref = 'jmh-lib' }
+jmh-bytecode = { module = 'org.openjdk.jmh:jmh-generator-bytecode', version.ref = 'jmh-lib' }
+slf4j = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+
+# Common Libraries
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+jetbrains-annotations = { module = "org.jetbrains:annotations", version.ref = "jetbrains-annotation" }

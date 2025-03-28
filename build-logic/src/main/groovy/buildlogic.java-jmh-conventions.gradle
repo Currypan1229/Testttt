@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'me.champeau.jmh'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    jmh libs.jmh.core
+    jmh libs.jmh.apt
+    jmh libs.jmh.bytecode
+
+    jmh libs.slf4j
+}
+
+jmh {
+    iterations = 10
+    batchSize = 1
+    fork = 5
+    failOnError = true
+    forceGC = true
+    resultFormat = 'CSV'
+    threads = 1
+    jmhTimeout = '1m'
+    timeUnit = 'ms'
+
+    warmup = '10s'
+    warmupBatchSize = 10
+    warmupForks = 0
+    warmupIterations = 1
+
+    jvmArgs = ['-Xmx32G', '-server', '-XX:CompileThreshold=1', '-XX:MaxInlineSize=1', '-XX:+UseStringDeduplication']
+    //-XX:+TieredCompilation
+
+    jmhVersion = '1.37'
+    zip64 = true
+}

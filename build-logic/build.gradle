@@ -3,12 +3,15 @@ plugins {
 }
 
 repositories {
+    maven {
+        name = 'Fabric'
+        url = 'https://maven.fabricmc.net/'
+    }
     gradlePluginPortal()
 }
 
 dependencies {
-    //implementation 'net.fabricmc:fabric-loom:1.10-SNAPSHOT'
     implementation libs.gradle.versions
-    //implementation libs.fabric.loom
-    //implementation libs2.loom
+    implementation libs.fabric.loom
+    implementation libs.jmh.pl
 }
