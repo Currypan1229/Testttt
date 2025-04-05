@@ -1,0 +1,21 @@
+plugins {
+    id 'buildlogic.java-neoforge-conventions'
+    id 'buildlogic.java-module-conventions'
+}
+
+println parent.parent.allprojects.find { (it.path == ':common') }
+
+dependencies {
+
+    implementation project(':common:api')
+    implementation project(':common:impl')
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs += file("../../common/api/src/main/resources")
+            srcDirs += file("../../common/impl/src/main/resources")
+        }
+    }
+}

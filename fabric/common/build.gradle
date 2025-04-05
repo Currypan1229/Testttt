@@ -18,7 +18,7 @@ dependencies {
     modImplementation libs.fabric.loader.'1215'
     modImplementation libs.fabric.api.'1215'
 
-    modImplementation libs.mod.modmenu.'1215'
+    modImplementation libs.mod.fabric.modmenu.'1215'
 
     implementation project(':common:api')
     implementation project(':common:impl')
