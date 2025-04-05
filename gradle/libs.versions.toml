@@ -9,6 +9,7 @@ minecraft-1215 = '1.21.5'
 fabric-yarn-1215 = '1.21.5+build.1'
 fabric-loader-1215 = '0.16.10'
 fabric-api-1215 = '0.119.5+1.21.5'
+mod-modmenu-1215 = '14.0.0-rc.2'
 
 # JMH Libraries
 jmh-lib = '0.9'
@@ -29,6 +30,7 @@ minecraft-1215 = { module = 'org.mojang:minecraft', version.ref = 'minecraft-121
 fabric-yarn-1215 = { module = 'net.fabricmc:yarn', version.ref = 'fabric-yarn-1215' }
 fabric-loader-1215 = { module = 'net.fabricmc:fabric-loader', version.ref = 'fabric-loader-1215' }
 fabric-api-1215 = { module = 'net.fabricmc.fabric-api:fabric-api', version.ref = 'fabric-api-1215' }
+mod-modmenu-1215 = { module = 'com.terraformersmc:modmenu', version.ref = 'mod-modmenu-1215' }
 
 # JMH Libraries
 jmh-core = { module = 'org.openjdk.jmh:jmh-core', version.ref = 'jmh-lib' }

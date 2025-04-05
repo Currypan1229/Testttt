@@ -8,3 +8,5 @@ common/build
 api/build
 
 .idea
+
+fabric/*/run

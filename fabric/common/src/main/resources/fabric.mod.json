@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "littlemaid",
+  "version": "${VERSION}",
+  "name": "LittleMaidRemade",
+  "description": "Little Maid Mod",
+  "authors": [
+    "Currypan1229"
+  ],
+  "contributors": [
+    "Currypan1229"
+  ],
+  "contact": {
+    "homepage": "https://discord.gg/De8T2NS74X",
+    "sources": "https://github.com/AkazukinTeam/LittleMaid/",
+    "issues": "https://github.com/AkazukinTeam/LittleMaid/issues",
+    "email": "akazukin.team@gmail.com"
+  },
+  "license": "GNU General Public License v3.0",
+  "icon": "little_maid.png",
+  "environment": "client",
+  "entrypoints": {
+    "main": []
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "liquidbounce.generic.forum": "https://discord.gg/De8T2NS74X"
+      }
+    }
+  },
+  "mixins": [
+    "little_maud.mixins.json"
+  ],
+  "depends": {
+    "minecraft": [
+      "=1.21.5"
+    ],
+    "fabricloader": ">=0.16.10"
+  },
+  "suggests": {
+    "fabric": ">=0.119.5"
+  },
+  "accessWidener": "little_maid.accesswidener"
+}

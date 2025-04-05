@@ -5,11 +5,18 @@ plugins {
     id 'fabric-loom'
 }
 
+repositories {
+    maven {
+        name = "Terraformers"
+        url = "https://maven.terraformersmc.com/"
+    }
+}
+
 processResources {
     inputs.property "version", project.version
     filteringCharset "UTF-8"
 
     filesMatching("fabric.mod.json") {
-        expand "version": project.version
+        expand "VERSION": project.version
     }
 }

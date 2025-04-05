@@ -3,7 +3,6 @@ package org.akazukin.maid.mob;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.SpawnGroup;
-import net.minecraft.entity.SpawnLocationTypes;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.pathing.AmphibiousSwimNavigation;
 import net.minecraft.entity.ai.pathing.EntityNavigation;
@@ -13,7 +12,6 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.Heightmap;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.akazukin.maid.api.entity.ILittleMaidEntity;
@@ -34,7 +32,6 @@ public class LittleMaidEntity extends PathAwareEntity implements ILittleMaidEnti
                 .dimensions(0.6F, 1.5F)
                 .eyeHeight(1.25F)
                 .maxTrackingRange(8)
-                .spawnRestriction(SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, LittleMaidEntity::canSpawn)
                 .build(RegistryManager.LITTLE_MAID);
     }
 
